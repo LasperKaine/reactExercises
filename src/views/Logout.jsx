@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
+import { useUserContext } from '../hooks/contextHooks';
 
 const Logout = () => {
+  const { handleLogout } = useUserContext();
+
   useEffect(() => {
-    localStorage.removeItem('token');
-    window.location.href = '/';
+    handleLogout();
   }, []);
 
   return <h2>Logging out...</h2>;
