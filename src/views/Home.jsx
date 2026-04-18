@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MediaRow from '../components/MediaRow';
 import SingleView from '../views/Single';
-import { useMedia } from '../hooks/apiHooks';
+import { useMedia } from '../hooks/api-hooks';
 
 const Home = () => {
   const [selectedItem, setSelectedItem] = useState(null);
