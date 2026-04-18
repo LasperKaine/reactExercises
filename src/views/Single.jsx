@@ -6,21 +6,22 @@ const Single = () => {
 
   const item = state?.item;
 
-  if (!item) return <p>No item selected</p>;
+  if (!item) return <p>No media selected</p>;
 
   return (
     <div>
       <h2>{item.title}</h2>
 
+      <p>{item.description}</p>
+      <p>Uploaded by: {item.username}</p>
+
       {item.media_type.startsWith('image') && (
-        <img src={item.filename} alt={item.title} />
+        <img src={item.filename} alt={item.title} width="100%" />
       )}
 
       {item.media_type.startsWith('video') && (
-        <video src={item.filename} controls />
+        <video src={item.filename} controls width="100%" />
       )}
-
-      <p>{item.description}</p>
 
       <button onClick={() => navigate(-1)}>
         Go back
