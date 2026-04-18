@@ -1,1 +1,1 @@
-Open [https://users.metropolia.fi/~kaspelai/wsk-routing/] to view it in the browser.
+Open [https://users.metropolia.fi/~kaspelai/routing/] to view it in the browser.
