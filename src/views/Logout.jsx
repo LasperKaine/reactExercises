@@ -6,7 +6,7 @@ const Logout = () => {
 
   useEffect(() => {
     handleLogout();
-  }, []);
+  }, [handleLogout]);
 
   return <h2>Logging out...</h2>;
 };
