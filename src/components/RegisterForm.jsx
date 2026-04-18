@@ -1,5 +1,5 @@
 import useForm from '../hooks/formHooks';
-import { useAuthentication } from '../hooks/apiHooks';
+import { useAuthentication } from '../hooks/api-hooks';
 
 const RegisterForm = () => {
   const { postUser } = useAuthentication();
@@ -10,16 +10,16 @@ const RegisterForm = () => {
     password: '',
   };
 
-  const doRegister = async () => {
+  const doRegister = async (formData) => {
     try {
-      const result = await postUser(inputs);
+      const result = await postUser(formData);
       console.log(result);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const { inputs, handleInputChange, handleSubmit } = useForm(
+  const { handleInputChange, handleSubmit } = useForm(
     doRegister,
     initValues
   );
@@ -29,20 +29,24 @@ const RegisterForm = () => {
       <h1>Register</h1>
 
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username</label>
-          <input name="username" onChange={handleInputChange} />
-        </div>
+        <input
+          name="username"
+          placeholder="username"
+          onChange={handleInputChange}
+        />
 
-        <div>
-          <label>Email</label>
-          <input name="email" onChange={handleInputChange} />
-        </div>
+        <input
+          name="email"
+          placeholder="email"
+          onChange={handleInputChange}
+        />
 
-        <div>
-          <label>Password</label>
-          <input name="password" type="password" onChange={handleInputChange} />
-        </div>
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          onChange={handleInputChange}
+        />
 
         <button type="submit">Register</button>
       </form>

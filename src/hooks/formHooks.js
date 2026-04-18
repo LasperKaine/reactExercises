@@ -5,7 +5,8 @@ const useForm = (callback, initState) => {
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
-    callback();
+
+    callback(inputs);
   };
 
   const handleInputChange = (event) => {

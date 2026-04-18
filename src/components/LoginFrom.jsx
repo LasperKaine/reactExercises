@@ -9,19 +9,21 @@ const LoginForm = () => {
     password: '',
   };
 
-  const doLogin = async () => {
+  const doLogin = async (formData) => {
     try {
-      const result = await postLogin(inputs);
+      const result = await postLogin(formData);
+
       console.log(result);
 
       localStorage.setItem('token', result.token);
+
       window.location.href = '/';
     } catch (error) {
       console.error(error);
     }
   };
 
-  const { inputs, handleInputChange, handleSubmit } = useForm(
+  const { handleInputChange, handleSubmit } = useForm(
     doLogin,
     initValues
   );
@@ -34,22 +36,22 @@ const LoginForm = () => {
         <div>
           <label htmlFor="loginuser">Username</label>
           <input
+            id="loginuser"
             name="username"
             type="text"
-            id="loginuser"
-            onChange={handleInputChange}
             autoComplete="username"
+            onChange={handleInputChange}
           />
         </div>
 
         <div>
           <label htmlFor="loginpassword">Password</label>
           <input
+            id="loginpassword"
             name="password"
             type="password"
-            id="loginpassword"
-            onChange={handleInputChange}
             autoComplete="current-password"
+            onChange={handleInputChange}
           />
         </div>
 
