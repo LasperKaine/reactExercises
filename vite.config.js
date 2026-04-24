@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: '/~your-username/routing/',
+  base: '/~kaspelai/reactExercises/context/',
 })
