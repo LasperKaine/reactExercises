@@ -1,1 +1,1 @@
-Open [https://users.metropolia.fi/~kaspelai/wsk-upload/] to view it in the browser.
+Open [https://users.metropolia.fi/~kaspelai/reactExercises/upload/] to view it in the browser.
