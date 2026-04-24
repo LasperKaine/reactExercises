@@ -1,1 +1,1 @@
-Open [https://users.metropolia.fi/~kaspelai/tailwind/] to view it in the browser.
+Open [https://users.metropolia.fi/~kaspelai/reactExercises/tailwind/] to view it in the browser.
