@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './contexts/UserContext';
 
 import Layout from './components/Layout';
 import Home from './views/Home';
@@ -11,6 +12,7 @@ import Logout from './views/Logout';
 const App = () => {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <UserProvider>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -21,6 +23,7 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
         </Route>
       </Routes>
+      </UserProvider>
     </BrowserRouter>
   );
 };
